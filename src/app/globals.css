@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme{
+    --color-primary: #15342D;
+    --color-bg-1: #DAE1DE;
+}
+
+
+html, body {
+  overscroll-behavior: none;
+}
+

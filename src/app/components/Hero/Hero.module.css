@@ -1,0 +1,14 @@
+.text{
+    font-size: 12rem;
+}
+
+.blur{
+    backdrop-filter: blur(2px);
+}
+
+.bar{
+    width: 60px;
+    height: 4px;
+    background-color: white;
+}
+

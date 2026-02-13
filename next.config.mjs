@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
+const repoName = "stellar-homes";
 const nextConfig = {
-  /* config options here */
+  
+  output: "export", // REQUIRED
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
+  images: {
+    unoptimized: true,
+  },
+
+  
   reactCompiler: true,
   images:{
     remotePatterns:[

@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 @theme{
-    --color-primary: #15342D;
-    --color-bg-1: #DAE1DE;
+  --font-head: var(--font-head);
+  --font-subHead: var(--font-subHead);
+  --font-body: var(--font-body);
+  --font-titan: var(--font-titan);
+  --color-primary: #15342D;
+  --color-bg-1: #DAE1DE;
+
 }
+
 
 
 html, body {
   overscroll-behavior: none;
+  user-select: none;
 }
 

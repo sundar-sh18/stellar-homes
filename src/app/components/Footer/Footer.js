@@ -3,7 +3,7 @@ import { Mail, Phone, Globe } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-slate-900 text-white py-16 -z-10">
+    <footer id="contact" className="select-all bg-slate-900 text-white py-16 -z-10">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
           <div>
@@ -12,17 +12,17 @@ export default function Footer() {
               Ready to invest in a greener future? Contact us to learn more about our managed farmlands and eco-communities.
             </p>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-slate-300">
+              <div className="flex items-center gap-3 text-slate-300 cursor-pointer">
                 <Phone size={20} className="text-green-500" />
-                <span>+123-456-7890</span>
+                <span>08022330069</span>
               </div>
-              <div className="flex items-center gap-3 text-slate-300">
+              <div className="flex items-center gap-3 text-slate-300 cursor-pointer">
                 <Globe size={20} className="text-green-500" />
-                <span>www.reallygreatsite.com</span>
+                <span>www.stellarhomesdevelopers.com</span>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
                 <Mail size={20} className="text-green-500" />
-                <span>hello@reallygreatsite.com</span>
+                <span>stellarbuilders@gmail.com</span>
               </div>
             </div>
           </div>

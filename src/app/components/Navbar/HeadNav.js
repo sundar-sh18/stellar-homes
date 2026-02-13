@@ -10,22 +10,22 @@ export default function HeadNav(){
         {
             id: 1,
             name: "Home",
-            url: "/home",
+            url: "/",
         },
         {
             id: 2,
             name: "Innovations",
-            url: "/Innovations",
+            url: "/",
         },
         {
             id: 3,
             name: "Benefits",
-            url: "/Benefits",
+            url: "/",
         },
         {
             id: 4,
             name: "Our Works",
-            url: "/OurWorks",
+            url: "/",
         },
     ]
 
@@ -54,13 +54,13 @@ export default function HeadNav(){
   return (
     <div className={`${style.headNav} ${showNavbar ? style.show : ''} ${style.trans} hidden lg:flex justify-between p-10  align-center items-center shadow-2xl font-semibold transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] `}>
 
-        <Link href="/home"><Image width={100} height={100} src="/favicon.ico" alt=""></Image></Link>
+        <Link href="/"><Image width={100} height={100} src="/favicon.ico" alt=""></Image></Link>
         <ul className=' hidden md:flex lg:flex lg:justify-between lg:gap-10'>
             {nav.map((nav) => (
                 <Link className={`${style.line} ${style.trans} text-bg-1 relative`} key={nav.id} href={nav.url}>{nav.name}</Link>
             ))}
         </ul>
-        <Link className={`${style.trans} hidden md:flex md:gap-2 lg:flex lg:gap-2 text-bg-1 hover:text-white line`} href="/Contact"><button className={`${style.button} ${style.type1} flex`}><span className={`${style.trans} ${style.btnTxt}`}></span>Contact Us</button></Link>
+        <Link className={`${style.trans} hidden md:flex md:gap-2 lg:flex lg:gap-2 text-bg-1 hover:text-white line`} href="#contact"><button className={`${style.button} ${style.type1} flex`}><span className={`${style.trans} ${style.btnTxt}`}></span>Contact Us</button></Link>
     </div>
   );
 };

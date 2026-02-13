@@ -15,5 +15,7 @@
 html, body {
   overscroll-behavior: none;
   user-select: none;
+  scroll-behavior: smooth;
+
 }
 

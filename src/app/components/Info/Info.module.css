@@ -6,4 +6,21 @@
 
 .box:hover .rotate{
     transform: rotate(90deg);
+    scale: 1.1;
+}
+
+.pulse{
+    animation: move 1s ease-in-out infinite;
+}
+
+@keyframes move {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
 }

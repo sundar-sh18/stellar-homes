@@ -4,8 +4,6 @@ const repoName = "stellar-homes";
 
 const nextConfig = {
   output: "export",
-basePath: "/stellar-homes",
-assetPrefix: "/stellar-homes/",
 
 
   reactCompiler: true,

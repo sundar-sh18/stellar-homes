@@ -6,4 +6,4 @@
 :HL["/stellar-homes/_next/static/media/918a3c819feda146-s.p.eb0baf2a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/stellar-homes/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/stellar-homes/_next/static/chunks/ab5785c433372b31.css","style"]
-0:{"buildId":"VO1GOToVXwoI0N3IKZ3-V","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"2IOCEk1SBXdlsqbXzWrai","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

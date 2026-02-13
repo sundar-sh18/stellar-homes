@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Stellar Homes & Wardiere Inc. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Stellar Homes. All rights reserved.</p>
         </div>
       </div>
     </footer>

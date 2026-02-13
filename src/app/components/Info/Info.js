@@ -10,9 +10,9 @@ const courgette = Courgette({
 
 export default function Info() {
   return (
-    <div className=' h-dvh bg-bg-1 text-primary flex flex-col justify-center align-middle items-center'>
-        <div className='pt-80 pl-40 pb-40 pr-20 flex justify-between gap-20 w-full'>
-            <div className={`flex flex-col  w-[65%]`}>
+    <div className='h-dvh w-dvw bg-bg-1 text-primary lg:flex lg:flex-col justify-center items-center'>
+        <div className='pt-20 pr-10 pl-10 lg:pt-80 lg:pl-40 lg:pb-40 lg:pr-20 flex flex-col lg:flex-row justify-between gap-20 w-full'>
+            <div className={`w-dvw lg:flex lg:flex-col  lg:w-[65%] `}>
                 <motion.h1 initial={{ transform: "translateY(50px)", opacity: 0, filter: "blur(2px)"}}
                         whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
                         transition={{duration: 1,
@@ -23,9 +23,9 @@ export default function Info() {
           margin: "-20% 0px -20% 0px", // trigger at viewport middle
           once: true, // true = animate only once
         }}
-                                            className={`${style.size} font-head font-extrabold leading-none`}>Introduction to <br/>Stellar Mulberry</motion.h1>
-                <section className='font-subHead text-md flex justify-between mt-20 gap-30'>
-                    <div>
+                                            className={`w-dvw md:text-[1.5rem] text-left lg:text-[3.5rem] font-head font-extrabold leading-none`}>Introduction to Stellar Mulberry</motion.h1>
+                <section className='w-dvw font-subHead text-md flex justify-between md:flex-col lg:mt-20 gap-30'>
+                    <div className='flex flex-col'>
                         <motion.h3 initial={{ transform: "translateY(50px)", opacity: 0, filter: "blur(2px)"}}
                         whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
                         transition={{duration: 1,
@@ -36,7 +36,7 @@ export default function Info() {
           margin: "-40% 0px -20% 0px", // trigger at viewport middle
           once: true, // true = animate only once
         }}
-                         className='font-subHead text-[1.2rem] font-bold'>Where Nature Meets Opportunity</motion.h3>
+                         className='font-subHead md:text-[1rem] lg:text-[1.2rem] font-bold'>Where Nature Meets Opportunity</motion.h3>
                         <motion.p 
                         initial={{ transform: "translateY(0px)", opacity: 0, filter: "blur(2px)"}}
                         whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
@@ -48,10 +48,10 @@ export default function Info() {
           margin: "-40% 0px -20% 0px", // trigger at viewport middle
           once: true, // true = animate only once
         }}
-         className=' leading-tight mt-30 text-justify'>At Stellar Homes, we believe a home should be more than just walls—it should be a legacy. Stellar Mulberry is a premium plotted development in Chikkaballapur designed to offer a wholesome lifestyle away from city chaos. Whether you are building a weekend retreat or securing a future asset, this is your gateway to peaceful living and smart investment.</motion.p>
+         className='w-fit text-wrap leading-tight mt-30 text-justify'>At Stellar Homes, we believe a home should be more than just walls—it should be a legacy. Stellar Mulberry is a premium plotted development in Chikkaballapur designed to offer a wholesome lifestyle away from city chaos. Whether you are building a weekend retreat or securing a future asset, this is your gateway to peaceful living and smart investment.</motion.p>
                     </div>
                     
-                    <ul className='list-disc leading-tight max-w-full'>
+                    <ul className='list-disc leading-tight w-dvw flex gap-30'>
                         <motion.li initial={{ transform: "translateY(50px)", opacity: 0, filter: "blur(2px)"}}
                         whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
                         transition={{duration: 1,

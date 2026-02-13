@@ -6,10 +6,10 @@ import Info2 from './components/Info/Info2'
 
 export default function Page() {
   return (
-    <div className="">
+    <div className="w-dvw ">
       
       <HeadNav/>
-      <div className="h-dvh bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
+      <div className="lg:h-dvh w-dvw bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
         <Hero/>
       </div>
       <Info/>

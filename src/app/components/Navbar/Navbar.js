@@ -32,14 +32,14 @@ export default function Navbar() {
 
   return (
     
-    <nav className={`${style.trans} flex justify-between p-10  align-center items-center font-semibold transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] `}>
+    <nav className={`${style.trans} bg-primary p-2 flex justify-between lg:p-10 lg:bg-transparent  align-center items-center font-semibold transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] `}>
         <Link href="/home"><Image width={100} height={100} src="/favicon.ico" alt=""></Image></Link>
         <ul className='flex justify-between gap-10'>
             {nav.map((nav) => (
-                <Link className={`${style.line} ${style.trans} text-primary relative`} key={nav.id} href={nav.url}>{nav.name}</Link>
+                <Link className={`${style.line} ${style.trans} hidden md:flex lg:flex text-bg-1 lg:text-primary relative`} key={nav.id} href={nav.url}>{nav.name}</Link>
             ))}
         </ul>
-        <Link className={`${style.trans} flex gap-2 text-bg-1 hover:text-white line`} href="/Contact"><button className={`${style.button} ${style.type1} flex`}><span className={`${style.trans} ${style.btnTxt}`}></span>Contact Us</button></Link>
+        <Link className={`${style.trans} hidden md:flex lg:flex gap-2 text-bg-1 hover:text-white line`} href="/Contact"><button className={`${style.button} ${style.type1} flex`}><span className={`${style.trans} ${style.btnTxt}`}></span>Contact Us</button></Link>
     </nav>
   );
 }

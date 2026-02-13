@@ -1,0 +1,9 @@
+:HL["/stellar-homes/_next/static/chunks/98a1758fbd441d19.css","style"]
+:HL["/stellar-homes/_next/static/media/0e4860fba6b4b70c-s.p.0424067b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/stellar-homes/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/stellar-homes/_next/static/media/86d70b7c76b6ec6e-s.p.5d81ed22.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/stellar-homes/_next/static/media/8e87afa7481d865d-s.p.2d459580.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/stellar-homes/_next/static/media/918a3c819feda146-s.p.eb0baf2a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/stellar-homes/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/stellar-homes/_next/static/chunks/ab5785c433372b31.css","style"]
+0:{"buildId":"VO1GOToVXwoI0N3IKZ3-V","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

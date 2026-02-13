@@ -1,0 +1,9 @@
+.size{
+    font-size: 3.5rem;
+    
+}
+
+
+.box:hover .rotate{
+    transform: rotate(90deg);
+}

@@ -17,7 +17,7 @@ const data = [
     <div id='lifestyle' className='min-h-dvh bg-primary flex flex-col justify-between gap-10 lg:gap-20 w-full py-20 lg:py-0'>
       
       
-      <div className='bg-primary flex flex-col lg:flex-row mt-10 lg:mt-60 mx-6 lg:mx-40 mb-0 gap-10'>
+      <div className='bg-primary flex flex-col lg:flex-row mt-10 lg:mt-60 mx-6 lg:mx-20 mb-0 gap-10'>
         <motion.div 
             initial={{ transform: "translateX(0px)", opacity: 0, filter: "blur(0px)"}}
             whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 

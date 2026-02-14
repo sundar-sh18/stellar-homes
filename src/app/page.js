@@ -1,8 +1,11 @@
 import React from 'react'
 import Hero from './components/Hero/Hero'
-import Info from './components/Info/Info'
+import Info from './components/Info/Intro'
 import HeadNav from './components/Navbar/HeadNav'
-import Info2 from './components/Info/Info2'
+import Info2 from './components/Info/Why'
+import Attractions from './components/Info/Attraction'
+import Community from './components/Info/Community'
+import Highlights from './components/Info/Highlights'
 
 export default function Page() {
   return (
@@ -14,7 +17,9 @@ export default function Page() {
       </div>
       <Info/>
       <Info2/>
-      
+      <Attractions/>
+      <Community/>
+      <Highlights/>
     </div>
   )
 }

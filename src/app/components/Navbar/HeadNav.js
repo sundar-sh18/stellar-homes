@@ -39,7 +39,7 @@ export default function HeadNav(){
   return (
     <div className={`${style.headNav} ${showNavbar ? style.show : ''} ${style.trans} hidden lg:flex justify-between p-10  align-center items-center shadow-2xl font-semibold transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] `}>
 
-        <Link href="#home"><Image width={100} height={100} src="/favicon.ico" alt=""></Image></Link>
+        <Link href="#home"><Image width={100} height={100} src="/favicon.ico" alt="stellar homes"></Image></Link>
         <ul className=' hidden md:flex lg:flex lg:justify-between lg:gap-10'>
             {nav.map((nav) => (
                 <Link className={`${style.line} ${style.trans} text-bg-1 relative`} key={nav.id} href={nav.url}>{nav.name}</Link>

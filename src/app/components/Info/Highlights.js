@@ -30,10 +30,10 @@ const highlights = [
 export default function Highlights() {
   return (
    
-    <div id='highlights' className='flex flex-col lg:flex-row w-full min-h-dvh lg:h-dvh lg:overflow-hidden'>
+    <div id='highlights' className='flex flex-col lg:flex-row w-full min-h-dvh lg:h-dvh lg:overflow-hidden bg-bg-1'>
         
       
-        <div className='w-full lg:w-[70%] bg-primary text-bg-1 p-6 lg:p-16 flex flex-col justify-center gap-6 lg:gap-10 h-full'>
+        <div className='w-full lg:w-[70%] bg-primary text-bg-1 p-6 lg:p-16 flex flex-col justify-center gap-6 lg:gap-10 h-full rounded-tr-2xl rounded-br-2xl'>
             
           
             <motion.div
@@ -77,7 +77,7 @@ export default function Highlights() {
         </div>
 
        
-        <div className='w-[30%] bg-bg-1 p-4 lg:p-6 flex flex-col items-center justify-center gap-4 lg:gap-4 h-full'>
+        <div className='lg:w-[30%] bg-bg-1 p-4 lg:p-6 flex flex-col items-center justify-center gap-4 lg:gap-4 h-full'>
             {highlights.map((item) => (
                 <motion.div 
                     key={item.id}

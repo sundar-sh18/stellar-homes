@@ -6,28 +6,13 @@ import style from './HeadNav.module.css';
 
 
 export default function HeadNav(){
- const nav = [
-        {
-            id: 1,
-            name: "Home",
-            url: "/",
-        },
-        {
-            id: 2,
-            name: "Innovations",
-            url: "/",
-        },
-        {
-            id: 3,
-            name: "Benefits",
-            url: "/",
-        },
-        {
-            id: 4,
-            name: "Our Works",
-            url: "/",
-        },
-    ]
+    const nav = [
+        { id: 1, name: "Home", url: "#home" },
+        { id: 2, name: "About", url: "#about" },
+        { id: 3, name: "Lifestyle", url: "#lifestyle" },
+        { id: 4, name: "Benefits", url: "#benefits" },
+        { id: 5, name: "Our Works", url: "#highlights" },
+    ];
 
 
   const [showNavbar, setShowNavbar] = useState(false);
@@ -54,7 +39,7 @@ export default function HeadNav(){
   return (
     <div className={`${style.headNav} ${showNavbar ? style.show : ''} ${style.trans} hidden lg:flex justify-between p-10  align-center items-center shadow-2xl font-semibold transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] `}>
 
-        <Link href="/"><Image width={100} height={100} src="/favicon.ico" alt=""></Image></Link>
+        <Link href="#home"><Image width={100} height={100} src="/favicon.ico" alt=""></Image></Link>
         <ul className=' hidden md:flex lg:flex lg:justify-between lg:gap-10'>
             {nav.map((nav) => (
                 <Link className={`${style.line} ${style.trans} text-bg-1 relative`} key={nav.id} href={nav.url}>{nav.name}</Link>

@@ -1,13 +1,13 @@
 import React from 'react'
 import style from './Info.module.css'
 import * as motion from "motion/react-client"
+import Image from 'next/image'
 
 export default function Info() {
   return (
-    <div className='min-h-dvh w-full bg-bg-1 text-primary flex flex-col justify-center items-center py-10 lg:py-0'>
+    <div id='about' className='min-h-dvh w-full bg-bg-1 text-primary flex flex-col justify-center items-center py-10 lg:py-0'>
         <div className='px-6 md:px-10 lg:pl-40 lg:pr-20 flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 w-full max-w-[1920px]'>
             
-            {/* Text Content */}
             <div className={`w-full lg:w-[65%] flex flex-col`}>
                 <motion.h1 
                     initial={{ transform: "translateY(50px)", opacity: 0, filter: "blur(2px)"}}
@@ -42,7 +42,7 @@ export default function Info() {
                     </div>
                     
                     <ul className='list-disc leading-tight flex flex-col gap-6 lg:gap-10 lg:w-[40%] pl-5 lg:pl-0'>
-                        {/* List Items kept identical, just simplified classes */}
+                    
                         <motion.li 
                             initial={{ transform: "translateY(50px)", opacity: 0, filter: "blur(2px)"}}
                             whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
@@ -71,8 +71,8 @@ export default function Info() {
                 </section>
             </div>
 
-            {/* Image Section */}
-            <div className={` w-full lg:w-[35%] lg:h-auto pb-10 lg:pb-0`}>
+           
+            <div className={` w-full lg:w-[35%] lg:h-auto pb-10 lg:pb-0 rounded-2xl`}>
                 <motion.div 
                     initial={{ transform: "translateY(0px)", opacity: 0, filter: "blur(3px)"}}
                     whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
@@ -80,6 +80,7 @@ export default function Info() {
                     viewport={{ amount: 0.5, margin: "-40% 0px -20% 0px", once: true }}
                     className={`${style.pulse} bg-gray-300 w-full h-full rounded-2xl hover:shadow-md hover:scale-105 transition-all duration-500 ease-in-out`}
                 >
+                    <Image src="/sample.jpg" fill className="object-cover opacity-100 rounded-2xl" alt="stellar mulberry" />
                 </motion.div>
             </div>
         </div>

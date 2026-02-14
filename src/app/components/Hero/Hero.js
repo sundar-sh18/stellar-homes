@@ -9,10 +9,10 @@ export default function Hero() {
         <Navbar/>
       </div>
       
-      {/* Centering container */}
+    
       <div className={`flex flex-col justify-center items-center h-full w-full text-center text-primary z-0 pt-20 lg:pt-0`}>
           <div className='font-head leading-[0.9] flex flex-col items-center'>
-            {/* Responsive Text Sizes */}
+            
             <h1 className="text-6xl md:text-8xl lg:text-[12rem]">Stellar</h1>
             <h1 className="text-6xl md:text-8xl lg:text-[12rem]">Mulberry</h1>
           </div>

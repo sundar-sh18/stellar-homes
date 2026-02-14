@@ -5,12 +5,12 @@
 
 
 .box:hover .rotate{
-    transform: rotate(90deg);
+    transform: rotate(45deg);
     scale: 1.1;
 }
 
 .pulse{
-    animation: move 1s ease-in-out infinite;
+    animation: move 3s ease-in-out infinite;
 }
 
 @keyframes move {

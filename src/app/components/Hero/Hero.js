@@ -17,7 +17,7 @@ export default function Hero() {
             <h1 className="text-6xl md:text-8xl lg:text-[12rem]">Mulberry</h1>
           </div>
           
-          <div className={`${style.bar} absolute hidden lg:block bottom-10 lg:bottom-40 z-50 rounded-4xl`}></div>
+          <div className={`${style.bar} absolute hidden lg:block bottom-10 lg:bottom-20 z-50 rounded-4xl`}></div>
       </div>
     </div>
   )

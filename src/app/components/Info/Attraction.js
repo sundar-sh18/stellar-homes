@@ -86,7 +86,7 @@ export default function Attractions() {
         </div>
 
         
-        <div className='w-full lg:w-1/2 bg-primary text-bg-1 relative flex flex-col justify-between p-6 lg:p-20 min-h-[50vh] lg:min-h-auto rounded-bl-xl'>
+        <div className='w-full lg:w-1/2 bg-primary text-bg-1 relative flex flex-col justify-between p-6 lg:p-20 min-h-[50vh] lg:min-h-auto rounded-bl-xl rounded-tl-2xl'>
             
            
             <div className='relative w-full h-full lg:h-[55%] flex flex-col justify-center lg:block'>

@@ -37,7 +37,7 @@ export default function Navbar() {
                 <ul className='flex flex-col lg:flex-row gap-6 lg:gap-10 text-center w-full lg:w-auto'>
                     {nav.map((item) => (
                         <Link 
-                            className={` lg:${style.trans} lg:${style.line} text-bg-1 lg:text-primary relative text-xl lg:text-lg`} 
+                            className={`${style.trans} ${style.line} text-bg-1 lg:text-primary relative text-xl lg:text-lg `} 
                             key={item.id} 
                             href={item.url}
                             onClick={() => setIsOpen(false)} 
@@ -59,7 +59,7 @@ export default function Navbar() {
 
           
             <div className="hidden lg:block">
-                <Link className={`${style.trans} text-bg-1 hover:text-white line`} href="#contact">
+                <Link className={`${style.trans} text-bg-1 hover:text-white`} href="#contact">
                     <button className={`${style.button} ${style.type1} flex justify-center`}>
                         <span className={`${style.trans} ${style.btnTxt}`}></span>Contact Us
                     </button>

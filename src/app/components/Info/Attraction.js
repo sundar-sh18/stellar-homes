@@ -121,7 +121,7 @@ export default function Attractions() {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className='font-titan text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.9] uppercase text-right lg:text-left'
+                    className='font-titan text-5xl lg:text-[clamp(2rem,5.5vw,8rem)] leading-[0.9] uppercase text-right lg:text-left'
                 >
                     Nearby <br/> Attractions
                 </motion.h2>

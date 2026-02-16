@@ -17,13 +17,13 @@ const data = [
     <div id='lifestyle' className='min-h-dvh bg-primary flex flex-col justify-between gap-10 lg:gap-20 w-full py-20 lg:py-0'>
       
       
-      <div className='bg-primary flex flex-col lg:flex-row mt-10 lg:mt-60 mx-6 lg:mx-20 mb-0 gap-10'>
+      <div className='bg-primary flex flex-col lg:flex-row mt-10 lg:mt-60 mx-6 lg:mx-20 mb-0 gap-10 '>
         <motion.div 
             initial={{ transform: "translateX(0px)", opacity: 0, filter: "blur(0px)"}}
             whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
             transition={{duration: 1, delay: 0, scale: { type: "spring", visualDuration: 1, bounce: 0.5}}}  
             viewport={{ amount: 0.1, margin: "-40% 0px -20% 0px", once: true }}
-            className='text-bg-1 font-titan text-5xl md:text-7xl lg:text-[8rem] leading-none uppercase h-fit'
+            className='text-bg-1 font-titan text-5xl lg:text-[clamp(2rem,7vw,8rem)]  leading-none uppercase h-fit'
         >
             Why Choose Stellar Mulberry?
         </motion.div>
@@ -34,7 +34,7 @@ const data = [
                 whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
                 transition={{duration: 1, delay: 0.2, scale: { type: "spring", visualDuration: 1, bounce: 0.5}}}  
                 viewport={{ amount: 0.5, margin: "-40% 0px -20% 0px", once: true }}
-                className={`${style.box} bg-gray-400 flex flex-col justify-center items-center rounded-2xl hover:shadow-2xl hover:shadow-gray-400 hover:transform transition-all duration-1000 ease-in-out w-full h-full relative`}
+                className={`${style.box} bg-gray-400 flex flex-col justify-center items-center rounded-2xl hover:shadow-2xl hover:shadow-gray-400 hover:transform transition-all duration-1000 ease-in-out w-full h-full relative `}
             >   
                 <Image src="/sample.jpg" fill className="object-cover opacity-100 rounded-2xl" alt="Why Stellar" />
                 <div className={`${style.rotate} bg-bg-1 rounded-4xl w-fit h-fit p-2 absolute transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] top-5 lg:top-10 rotate`}><MoveRight/></div>

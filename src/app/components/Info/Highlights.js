@@ -8,21 +8,21 @@ const highlights = [
         id: 1,
         title: "Gated Community Security",
         desc: "Round-the-clock security and perimeter fencing ensuring safety and peace of mind.",
-        src: "/sample.jpg", 
+        src: "/gate.jpeg", 
         delay: 0.2
     },
     {
         id: 2,
         title: "Green Living",
         desc: "Abundant tropical green patches and landscaped open spaces that bring nature to your doorstep.",
-        src: "/sample.jpg", 
+        src: "/green.jpeg", 
         delay: 0.3
     },
     {
         id: 3,
         title: "Modern Infrastructure",
         desc: "Well-planned internal roads, street lighting, and essential utilities for stress-free living.",
-        src: "/sample.jpg", 
+        src: "/modern2.jpeg", 
         delay: 0.4
     }
 ]

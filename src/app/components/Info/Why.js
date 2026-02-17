@@ -36,7 +36,7 @@ const data = [
                 viewport={{ amount: 0.5, margin: "-40% 0px -20% 0px", once: true }}
                 className={`${style.box} bg-gray-400 flex flex-col justify-center items-center rounded-2xl hover:shadow-2xl hover:shadow-gray-400 hover:transform transition-all duration-1000 ease-in-out w-full h-full relative `}
             >   
-                <Image src="/why.jpeg" fill className="object-cover opacity-100 rounded-2xl" alt="Why Stellar" />
+                <Image src="/why1.jpeg" fill className="object-cover opacity-100 rounded-2xl" alt="Why Stellar" />
                 <div className={`${style.rotate} bg-bg-1 rounded-4xl w-fit h-fit p-2 absolute transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] top-5 lg:top-10 rotate`}><MoveRight/></div>
                 <div className='bg-bg-1 text-center font-body text-2xl lg:text-4xl -m-3 lg:m-10 absolute bottom-0 px-10 py-2 rounded-md shadow-xl'>
                     Green, Gated, & Serene

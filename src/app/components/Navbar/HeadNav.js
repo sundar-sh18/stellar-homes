@@ -12,6 +12,7 @@ export default function HeadNav(){
         { id: 3, name: "Lifestyle", url: "#lifestyle" },
         { id: 4, name: "Benefits", url: "#benefits" },
         { id: 5, name: "Highlights", url: "#highlights" },
+         { id: 6, name: "Gallery", url: "#gallery" }, 
     ];
 
 

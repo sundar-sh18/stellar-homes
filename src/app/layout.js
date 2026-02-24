@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Courgette, Happy_Monkey, Caveat, Titan_One } from "next/font/google";
 import Footer from './components/Footer/Footer'
 import "./globals.css";
+import ChatBot from "./components/ChatBot/ChatBot";
 
 
 const geistSans = Geist({
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${happyMonkey.variable} ${courgette.variable} ${caveat.variable} ${titan.variable} antialiased overscroll-none flex flex-col`}
       >
         {children}
+        <ChatBot/>
         <Footer/>
       </body>
     </html>

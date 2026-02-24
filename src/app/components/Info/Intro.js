@@ -80,7 +80,7 @@ export default function Info() {
                     viewport={{ amount: 0.5, margin: "-40% 0px -20% 0px", once: true }}
                     className={`${style.pulse} bg-gray-300 w-full h-full rounded-2xl hover:shadow-md hover:scale-105 transition-all duration-500 ease-in-out`}
                 >
-                    <Image src="/intro1.jpeg" fill className="object-cover opacity-100 rounded-2xl" alt="stellar mulberry" />
+                    <Image src="/intro3.jpeg" fill className="object-cover opacity-100 rounded-2xl" alt="stellar mulberry" />
                 </motion.div>
             </div>
         </div>

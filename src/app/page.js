@@ -6,6 +6,8 @@ import Info2 from './components/Info/Why'
 import Attractions from './components/Info/Attraction'
 import Community from './components/Info/Community'
 import Highlights from './components/Info/Highlights'
+import Location from './components/Location/Location'
+import Gallery from './components/Gallery/Gallery'
 
 export default function Page() {
   return (
@@ -20,6 +22,8 @@ export default function Page() {
       <Attractions/>
       <Community/>
       <Highlights/>
+      <Gallery/>
+      <Location/>
     </div>
   )
 }

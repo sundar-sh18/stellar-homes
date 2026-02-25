@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 import Groq from 'groq-sdk';
 import { NextResponse } from 'next/server';
 

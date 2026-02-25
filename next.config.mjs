@@ -3,7 +3,6 @@
 const repoName = "stellar-homes";
 
 const nextConfig = {
-  output: "export",
 
 
   reactCompiler: true,

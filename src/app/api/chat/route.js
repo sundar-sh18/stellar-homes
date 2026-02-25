@@ -1,10 +1,9 @@
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 import Groq from 'groq-sdk';
 import { NextResponse } from 'next/server';
 
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-});
+
 
 const SYSTEM_PROMPT = `
 You are the friendly AI Sales Assistant for "Stellar Mulberry," a premium plotted development by Stellar Homes.
@@ -32,6 +31,10 @@ RULES:
 
 export async function POST(req) {
   try {
+
+      const groq = new Groq({
+    apiKey: process.env.GROQ_API_KEY,
+  });
     const { messages } = await req.json();
 
     const response = await groq.chat.completions.create({

@@ -17,9 +17,16 @@ export default function ChatBot() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+   const getApiUrl = () => {
+    if (typeof window === "undefined") return "/api/chat";
+    return `${window.location.origin}/api/chat`;
+  };
+
   useEffect(() => {
     scrollToBottom();
   }, [messages, isOpen]);
+
+  
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -30,8 +37,10 @@ export default function ChatBot() {
     setInput('');
     setLoading(true);
 
+   
+
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(getApiUrl(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: [...messages, userMessage] }),

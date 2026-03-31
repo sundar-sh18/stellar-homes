@@ -1,10 +1,18 @@
 
 
 
-
-.bar{
-    width: 60px;
-    height: 4px;
-    background-color: white;
+.float {
+  animation: floatAnim 4s ease-in-out infinite;
 }
 
+@keyframes floatAnim {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

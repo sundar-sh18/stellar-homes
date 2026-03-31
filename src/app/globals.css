@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
-@theme{
+@theme {
   --font-head: var(--font-head);
   --font-subHead: var(--font-subHead);
   --font-body: var(--font-body);
   --font-titan: var(--font-titan);
+  --font-harrington: var(--font-harrington);
+  --font-mont: var(--font-mont);
   --color-primary: #15342D;
   --color-bg-1: #DAE1DE;
+  --color-M: #76255F;
+  --color-S: #007391;
 
 }
 

@@ -14,7 +14,7 @@ export default function Page() {
     <div className="w-dvw overflow-clip">
       
       <HeadNav/>
-      <div className="lg:h-dvh w-dvw bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
+      <div className="lg:h-dvh w-dvw  bg-cover bg-center bg-no-repeat">
         <Hero/>
       </div>
       <Info/>

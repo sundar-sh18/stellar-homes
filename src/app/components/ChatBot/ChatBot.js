@@ -60,6 +60,39 @@ export default function ChatBot() {
     }
   };
 
+
+  const formatMessage = (text, isUser) => {
+
+    const linkStyle = isUser 
+      ? "underline font-bold text-white hover:text-gray-200" 
+      : "underline font-bold text-blue-600 hover:text-blue-800";
+
+    const regex = /(https?:\/\/[^\s]+|[0-9]{10,12})/g;
+    const parts = text.split(regex);
+
+    return parts.map((part, i) => {
+      if (part.match(/^https?:\/\//)) {
+        const cleanUrl = part.replace(/[.,;!?]$/, '');
+        const punctuation = part.slice(cleanUrl.length);
+        return (
+          <React.Fragment key={i}>
+            <a href={cleanUrl} target="_blank" rel="noopener noreferrer" className={`${linkStyle} wrap-break-words`}>
+              {cleanUrl}
+            </a>
+            {punctuation}
+          </React.Fragment>
+        );
+      } else if (part.match(/^[0-9]{10,12}$/)) {
+        return (
+          <a key={i} href={`tel:${part}`} className={linkStyle}>
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end font-subHead select-text">
       
@@ -92,13 +125,13 @@ export default function ChatBot() {
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div 
-                  className={`max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed ${
+                  className={`max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed wrap-break-words whitespace-pre-wrap ${
                     msg.role === 'user' 
                       ? 'bg-primary text-bg-1 rounded-tr-none' 
                       : 'bg-white text-gray-800 border border-gray-200 rounded-tl-none shadow-sm'
                   }`}
                 >
-                  {msg.content}
+                  {formatMessage(msg.content, msg.role === 'user')}
                 </div>
               </div>
             ))}

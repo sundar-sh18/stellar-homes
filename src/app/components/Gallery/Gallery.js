@@ -27,7 +27,7 @@ export default function Gallery() {
             >
                 Life at Stellar
             </motion.h2>
-            <p className='font-body text-xl text-gray-600 mt-4 max-w-2xl mx-auto'>
+            <p className='font-body text-2xl text-gray-600 mt-4 max-w-2xl mx-auto'>
                 A glimpse into the serene landscapes, modern infrastructure, and the vibrant community building their legacy here.
             </p>
         </div>
@@ -41,7 +41,7 @@ export default function Gallery() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className={`relative rounded-2xl overflow-hidden group ${img.span} min-h-62.5 grayscale-[10%] hover:grayscale-0`}
+                    className={`relative rounded-2xl overflow-hidden group ${img.span} min-h-62.5 grayscale-[0] hover:grayscale-0`}
                 >
                     <div className='bg-gray-300 w-full h-full absolute inset-0 transition-transform duration-700 group-hover:scale-110 '>
                       

@@ -9,7 +9,7 @@
     width: 100%;
     height: 3px;
     border-radius: 100px;
-    background-color: white;
+    background-color: var(--color-bg-1);
     bottom: -2px;
     left: 0;
     transform: scaleX(0);
@@ -40,7 +40,7 @@
   position: relative;
   background-color: transparent;
   cursor: pointer;
-  border: 2px solid var(--color-bg-1);
+  border: 2px solid white;
   overflow: hidden;
   padding: 3px 10px 3px 10px;
   border-radius: 30px;
@@ -50,8 +50,8 @@
 
 @media (min-width:1024px){
   .button {
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  color: white;
+  border: 2px solid white;
 
 }
 }

@@ -1,10 +1,13 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import * as motion from 'motion/react-client'
 import { MoveRight } from 'lucide-react'
 import style from './Info.module.css'
 import Image from 'next/image'
 
 export default function Info2() {
+
+  const [showImage, setShowImage] = useState(false)
 
 const data = [
     { id:1, title: 'A Lifestyle Rooted in Nature', desc: 'Experience peace and calmness with beautifully landscaped open spaces. Every morning here feels like a breath of fresh air, quite literally.', delay: 0.2 },
@@ -28,39 +31,62 @@ const data = [
             Why Choose Stellar Mulberry?
         </motion.div>
         
-        <div className='w-full lg:w-full lg:h-auto transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] hover:scale-95'>
-            <motion.div 
-                initial={{ transform: "translateY(0px)", opacity: 0, filter: "blur(2px)"}}
-                whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
-                transition={{duration: 1, delay: 0.2, scale: { type: "spring", visualDuration: 1, bounce: 0.5}}}  
-                viewport={{ amount: 0.5, margin: "-40% 0px -20% 0px", once: true }}
-                className={`${style.box} bg-gray-400 flex flex-col justify-center items-center rounded-2xl hover:shadow-2xl hover:shadow-gray-400 hover:transform transition-all duration-1000 ease-in-out w-full h-full relative `}
-            >   
-                <Image src="/why1.jpeg" fill className="object-cover opacity-100 rounded-2xl" alt="Why Stellar" />
-                <div className={`${style.rotate} bg-bg-1 rounded-4xl w-fit h-fit p-2 absolute transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] top-5 lg:top-10 rotate`}><MoveRight/></div>
-                <div className='bg-bg-1 text-center font-body text-2xl lg:text-4xl -m-3 lg:m-10 absolute bottom-0 px-10 py-2 rounded-md shadow-xl'>
-                    Green, Gated, & Serene
-                </div>
-            </motion.div>
+        <div className='flex w-full lg:w-full lg:h-auto justify-center cursor-pointer'>
+          <motion.div 
+              initial={{ transform: "translateX(60px)", opacity: 0, filter: "blur(0px)"}}
+            whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
+              transition={{duration: 1, delay: 0, scale: { type: "spring", visualDuration: 1, bounce: 0.5}}}  
+            viewport={{ amount: 0.1, margin: "-40% 0px -20% 0px", once: true }}
+              className="relative lg:w-lg h-[400px] lg:h-[450px] rounded-2xl overflow-hidden"
+              onClick={() => setShowImage(true)}
+          >   
+              <Image 
+                  src="/ROI.jpeg" 
+                  fill 
+                  className=" rounded-2xl" 
+                  alt="ROI" 
+              />
+          </motion.div>
         </div>
       </div>
 
       
-      <div className='bg-bg-1 h-auto lg:h-1/3 w-full flex flex-col lg:flex-row justify-around items-start lg:items-start px-6 lg:px-40 py-20 lg:py-10 gap-10 lg:gap-[5%]'> 
-       {data.map((data) => (
-        <motion.div 
-            initial={{ transform: "translateX(-50px)", opacity: 0, filter: "blur(0px)"}}
-            whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
-            transition={{duration: 1, delay: data.delay, scale: { type: "spring", visualDuration: 1, bounce: 0.5}}}  
-            viewport={{ amount: 0.2, margin: "-40% 0px -20% 0px", once: true }}
-            key={data.id} 
-            className='w-full lg:w-1/4'
-        >
-            <h1 className='mb-3 lg:mb-5 bold font-subHead font-bold text-xl lg:text-2xl'>{data.title}</h1>
-            <p className='font-subHead text-lg lg:text-[1.1rem] leading-normal'>{data.desc}</p>
-        </motion.div>
-       ))} 
-      </div>
+        <div className='bg-bg-1 w-full grid grid-cols-1 lg:grid-cols-4 px-6 lg:px-40 py-20 lg:py-10 gap-10'>
+          {data.map((data) => (
+            <motion.div 
+              initial={{ transform: "translateX(-50px)", opacity: 0 }}
+              whileInView={{ opacity: 1, transform: "translateY(0px)" }} 
+              transition={{
+                duration: 1,
+                delay: data.delay
+              }}  
+              viewport={{ amount: 0.2, once: true }}
+              key={data.id} 
+              className='border border-primary rounded-2xl p-6 lg:p-10 text-center flex flex-col justify-between items-center hover:shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.075,0.82,0.165,1)]  h-full'
+            >
+              <div className="flex flex-col items-center h-full justify-between">
+                <h1 className='mb-3 lg:mb-5 font-subHead font-bold text-xl lg:text-2xl'>{data.title}</h1>
+                <p className='font-subHead text-lg lg:text-[1.1rem] leading-normal'>{data.desc}</p>
+              </div>
+            </motion.div>
+          ))} 
+        </div>
+        {showImage && (
+  <div 
+    className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+    onClick={() => setShowImage(false)}
+  >
+    <div className="relative w-[95%] h-[90%]">
+      <Image
+        src="/ROI.jpeg"
+        fill
+        className="object-contain"
+        alt="Full View"
+      />
     </div>
+  </div>
+)}
+    </div>
+    
   )
 }

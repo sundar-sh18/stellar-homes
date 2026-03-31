@@ -1,7 +1,9 @@
-import { Geist, Geist_Mono, Courgette, Happy_Monkey, Caveat, Titan_One } from "next/font/google";
+import { Geist, Geist_Mono, Courgette, Happy_Monkey, Caveat, Titan_One, Montserrat } from "next/font/google";
 import Footer from './components/Footer/Footer'
 import "./globals.css";
 import ChatBot from "./components/ChatBot/ChatBot";
+import localFont from 'next/font/local'
+import SmoothScroll from './components/Scroll/scroll';
 
 
 const geistSans = Geist({
@@ -38,20 +40,38 @@ const caveat = Caveat({
     variable: '--font-titan',
   })
 
+
+const harrington = localFont({
+  src: './fonts/HARRINGT.woff', 
+  variable: '--font-harrington',  
+  display: 'swap',                 
+})
+
+
+  const Montser = Montserrat({
+    subsets: ['latin'],
+    weight: ['700','500', '400'],
+    variable: '--font-mont',
+  })
+
 export const metadata = {
   title: "Stellar Homes",
   description: "A Trusted Team With Vision and Passion",
 };
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${happyMonkey.variable} ${courgette.variable} ${caveat.variable} ${titan.variable} antialiased overscroll-none flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${happyMonkey.variable} ${courgette.variable} ${caveat.variable} ${titan.variable} ${harrington.variable} ${Montser.variable} antialiased overscroll-none flex flex-col`}
       >
-        {children}
-        <ChatBot/>
-        <Footer/>
+        <SmoothScroll>
+          {children}
+          <ChatBot/>
+          <Footer/>
+        </SmoothScroll>
       </body>
     </html>
   );

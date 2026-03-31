@@ -14,19 +14,19 @@ export default function Info() {
                     whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
                     transition={{duration: 1, delay: 0.2, scale: { type: "spring", visualDuration: 1, bounce: 0.5}}}  
                     viewport={{ amount: 0.5, margin: "-20% 0px -20% 0px", once: true }}
-                    className={`text-4xl md:text-5xl lg:text-[3.5rem] font-head font-extrabold leading-none text-left mb-8 lg:mb-0`}
+                    className={`text-4xl md:text-5xl lg:text-[5rem] font-head font-extrabold leading-none text-left mb-8 lg:mb-0`}
                 >
                     Introduction to <br /> Stellar Mulberry
                 </motion.h1>
 
-                <section className='w-full flex flex-col lg:flex-row font-subHead text-md justify-between lg:mt-20 gap-10 lg:gap-20'>
+                <section className='w-full flex flex-col lg:flex-row font-subHead text-lg justify-between lg:mt-20 gap-10 lg:gap-20'>
                     <div className='flex flex-col lg:w-1/2'>
                         <motion.h3 
                             initial={{ transform: "translateY(50px)", opacity: 0, filter: "blur(2px)"}}
                             whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
                             transition={{duration: 1, delay: 0.2, scale: { type: "spring", visualDuration: 1, bounce: 0.5}}}  
                             viewport={{ amount: 0.5, margin: "-40% 0px -20% 0px", once: true }}
-                            className='font-subHead text-2xl lg:text-[1.2rem] font-bold'
+                            className='font-subHead text-3xl lg:text-[2.2rem] font-bold'
                         >
                             Where Nature Meets Opportunity
                         </motion.h3>
@@ -35,7 +35,7 @@ export default function Info() {
                             whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 
                             transition={{duration: 1, delay: 0.2, scale: { type: "spring", visualDuration: 1, bounce: 1}}}  
                             viewport={{ amount: 0.5, margin: "-40% 0px -20% 0px", once: true }}
-                            className='leading-tight mt-6 lg:mt-30 text-justify text-base lg:text-lg'
+                            className='leading-tight mt-6 lg:mt-30 text-justify text-base lg:text-[1.2rem]'
                         >
                             At Stellar Homes, we believe a home should be more than just walls—it should be a legacy. Stellar Mulberry is a premium plotted development in Chikkaballapur designed to offer a wholesome lifestyle away from city chaos. Whether you are building a weekend retreat or securing a future asset, this is your gateway to peaceful living and smart investment.
                         </motion.p>

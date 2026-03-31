@@ -70,7 +70,7 @@ export default function Highlights() {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
                 viewport={{ once: true }}
-                className='font-body text-base lg:text-lg text-justify leading-relaxed opacity-90 max-w-xl'
+                className='font-body text-xl lg:text-2xl text-justify leading-relaxed opacity-90 max-w-xl'
             >
                 Stellar Mulberry is more than just a plotted development; it is a gated community thoughtfully designed to offer a wholesome lifestyle. We believe that your home should be more than just walls and roofs—it should be an experience, a lifestyle, and a legacy. With DTCP & RERA approvals, we ensure your investment is safe.
             </motion.p>
@@ -86,7 +86,7 @@ export default function Highlights() {
                     transition={{ duration: 0.6, delay: item.delay, ease: "easeOut" }}
                     viewport={{ once: true }}
                    
-                    className='relative w-full h-[300px] lg:h-auto lg:flex-1 rounded-xl overflow-hidden group shadow-md'
+                    className='relative w-full h-[75] lg:h-auto lg:flex-1 rounded-xl overflow-hidden group shadow-md'
                 >
                    
                     <div className='bg-gray-400 w-full h-full relative'>
@@ -94,12 +94,12 @@ export default function Highlights() {
                     </div>
 
                     
-                    <div className='absolute bottom-4 left-4 right-4 bg-primary/95 backdrop-blur-sm p-4 lg:p-5 rounded-lg shadow-lg z-10'>
+                    {/* <div className='absolute bottom-4 left-4 right-4 bg-primary/95 backdrop-blur-sm p-4 lg:p-5 rounded-lg shadow-lg z-10'>
                         <h4 className='text-bg-1 font-bold font-subHead text-lg lg:text-xl mb-1'>{item.title}</h4>
                         <p className='text-bg-1/80 font-body text-sm leading-tight line-clamp-2'>
                             {item.desc}
                         </p>
-                    </div>
+                    </div> */}
                 </motion.div>
             ))}
         </div>

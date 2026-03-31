@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import style from './NavBar.module.css';
+import { useLenis } from 'lenis/react'
 
 export default function Navbar() {
+
+    const lenis = useLenis()
     const [isOpen, setIsOpen] = useState(false);
 
     const nav = [
-        { id: 1, name: "Home", url: "#home" },
+        { id: 1, name: "Home", url: 0},
         { id: 2, name: "About", url: "#about" },
         { id: 3, name: "Lifestyle", url: "#lifestyle" },
         { id: 4, name: "Benefits", url: "#benefits" },
@@ -16,11 +19,19 @@ export default function Navbar() {
         { id: 6, name: "Gallery", url: "#gallery" }, 
     ];
 
+    const scrollToTop = (url) => {
+    lenis.scrollTo(url, { duration: 2 },
+    setIsOpen(false)
+    ) 
+  }
+
     return (
-        <nav className={`${style.trans} bg-primary lg:bg-transparent p-4 lg:p-10 flex flex-col lg:flex-row justify-between lg:items-center font-semibold transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] relative z-50`}>
+        <nav className={`${style.trans} bg-primary lg:bg-transparent p-4 lg:p-9 flex flex-col lg:flex-row justify-between lg:items-center font-semibold transition-all duration-1000 ease-[cubic-bezier(0.075, 0.82, 0.165, 1)] relative z-50`}>
             
             <div className="flex justify-between items-center w-full lg:w-auto">
-                <Link href="#home"><Image width={100} height={100} src="/favicon.ico" alt="stellar homes"></Image></Link>
+                <Link href="/" >
+                    <Image width={100} height={100} src="/favicon.ico" alt="stellar homes"></Image>
+                </Link>
                 
                
                 <button 
@@ -34,14 +45,14 @@ export default function Navbar() {
             </div>
 
       
-            <div className={`${isOpen ? 'flex' : 'hidden'} lg:flex flex-col lg:flex-row w-full lg:w-auto gap-6 lg:gap-10 lg:justify-between items-center mt-6 lg:mt-0`}>
+            <div className={`${isOpen ? 'flex' : 'hidden'} lg:flex flex-col lg:flex-row w-full lg:p-3 lg:pl-10 lg:pr-10 lg:rounded-full lg:w-auto gap-6 lg:gap-10 lg:justify-between items-center mt-6 lg:mt-0 lg:backdrop-blur-sm border border-white/50`}>
                 <ul className='flex flex-col lg:flex-row gap-6 lg:gap-10 text-center w-full lg:w-auto'>
                     {nav.map((item) => (
                         <Link 
-                            className={`${style.trans} ${style.line} text-bg-1 lg:text-primary relative text-xl lg:text-lg `} 
-                            key={item.id} 
-                            href={item.url}
-                            onClick={() => setIsOpen(false)} 
+                            className={`${style.trans} ${style.line} text-bg-1 lg:text-white relative text-xl lg:text-lg `} 
+                            key={item.id}
+                            href="/"
+                            onClick={() => scrollToTop(item.url)}
                         >
                             {item.name}
                         </Link>

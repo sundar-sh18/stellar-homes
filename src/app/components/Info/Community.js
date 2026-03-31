@@ -51,7 +51,7 @@ export default function Community() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className='font-body text-lg lg:text-base text-gray-900  leading-snug'
+                    className='font-body text-xl lg:text-2xl text-gray-900  leading-snug'
                 >
                     Living at Stellar Mulberry means belonging to a neighborhood that values peace, safety, and shared experiences. It is more than just a plot of land; it is a retreat where like-minded families come together to build a legacy.
                 </motion.p>
@@ -63,7 +63,7 @@ export default function Community() {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.3 }}
                     viewport={{ once: true }}
-                    className='font-body text-lg text-justify lg:text-left leading-relaxed text-gray-800'
+                    className='font-body text-xl lg:text-2xl text-justify lg:text-left leading-relaxed text-gray-800'
                 >
                     Our amenities are the social heart of the project, designed to bridge the gap between urban isolation and community living. From evening walks on tree-lined paths to weekend gatherings at the clubhouse, every corner encourages interaction. With dedicated zones for senior citizens, pet parks, and meditation areas, every generation finds their space to thrive and connect.
                 </motion.p>

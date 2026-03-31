@@ -36,7 +36,7 @@ const attractionsData = [
 
 export default function Attractions() {
   return (
-    <div id='benefits' className='flex flex-col lg:border-t-[40] lg:pt-10 border-primary lg:flex-row w-full min-h-dvh bg-bg-1 overflow-hidden'>
+    <div id='benefits' className='flex flex-col lg:pt-10 border-primary lg:flex-row w-full min-h-dvh bg-bg-1 overflow-hidden'>
         
         
         <div className='w-full lg:w-1/2 p-6 lg:p-20 flex flex-col justify-center'>
@@ -54,7 +54,7 @@ export default function Attractions() {
                     <span className='uppercase tracking-widest text-sm font-bold'>Destinations</span>
                 </div>
                 <h2 className='font-head text-5xl lg:text-6xl text-primary'>Weekend Getaways</h2>
-                <p className='font-body text-xl mt-4 max-w-md text-gray-600'>
+                <p className='font-body text-2xl mt-4 max-w-md text-gray-600'>
                     Discover nature trails, spiritual centers, and scenic hills just a short drive from your home.
                 </p>
             </motion.div>
@@ -78,7 +78,7 @@ export default function Attractions() {
                         </div>
                         <div>
                             <h3 className='font-subHead font-bold text-xl text-primary'>{item.title}</h3>
-                            <p className='font-body text-lg leading-tight text-gray-600 mt-1'>{item.desc}</p>
+                            <p className='font-body text-xl leading-tight text-gray-600 mt-1'>{item.desc}</p>
                         </div>
                     </motion.div>
                 ))}

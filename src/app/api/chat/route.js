@@ -28,34 +28,19 @@ RULES:
 
 const rateLimitMap = new Map();
 
-function rateLimit(ip) {
+function isRateLimited(ip) {
   const now = Date.now();
   const WINDOW = 60 * 1000;
-  const LIMIT = 10;
+  const LIMIT = 8;
 
-  if (!rateLimitMap.has(ip)) {
-    rateLimitMap.set(ip, []);
-  }
-
+  if (!rateLimitMap.has(ip)) rateLimitMap.set(ip, []);
+  
   const timestamps = rateLimitMap.get(ip).filter(t => now - t < WINDOW);
+  if (timestamps.length >= LIMIT) return true;
+
   timestamps.push(now);
   rateLimitMap.set(ip, timestamps);
-
-  return timestamps.length <= LIMIT;
-}
-
-function isValidMessages(messages) {
-  return (
-    Array.isArray(messages) &&
-    messages.length > 0 &&
-    messages.every(
-      (msg) =>
-        msg.role &&
-        typeof msg.content === "string" &&
-        msg.content.length > 0 &&
-        msg.content.length < 500
-    )
-  );
+  return false;
 }
 
 export async function POST(req) {
@@ -64,60 +49,30 @@ export async function POST(req) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const ip =
-      req.headers.get("x-forwarded-for") ||
-      req.headers.get("x-real-ip") ||
-      "unknown";
-
-    if (!rateLimit(ip)) {
+    const ip = req.headers.get("x-forwarded-for")?.split(',')[0] || "127.0.0.1";
+    if (isRateLimited(ip)) {
       return NextResponse.json(
-        { error: "Too many requests. Try again later." },
+        { error: "Slow down! Please wait a minute before sending more messages." },
         { status: 429 }
       );
     }
 
     const { messages } = await req.json();
-
-    if (!isValidMessages(messages)) {
-      return NextResponse.json(
-        { error: "Invalid message format" },
-        { status: 400 }
-      );
-    }
-
-    const trimmedMessages = messages.slice(-5);
-
-    const groq = new Groq({
-      apiKey: process.env.GROQ_API_KEY,
-    });
+    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
     const response = await groq.chat.completions.create({
       model: "llama-3.1-8b-instant",
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        ...trimmedMessages,
-      ],
+      messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages.slice(-5)],
       temperature: 0.7,
-      max_tokens: 300,
     });
-
-    const rawContent =
-      response.choices[0]?.message?.content ||
-      "Sorry, I couldn't generate a response.";
-
-    const safeContent = rawContent.replace(/<[^>]*>?/gm, "");
 
     return NextResponse.json({
       role: "assistant",
-      content: safeContent,
+      content: response.choices[0]?.message?.content || "I'm sorry, I couldn't process that."
     });
 
   } catch (error) {
-    console.error("Error:", error.message);
-
-    return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
+    console.error("API Error:", error);
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }

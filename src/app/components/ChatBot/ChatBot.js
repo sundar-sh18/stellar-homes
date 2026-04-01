@@ -42,7 +42,7 @@ export default function ChatBot() {
     try {
       const response = await fetch(getApiUrl(), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json','x-app-key': 'stellar-secret' },
         body: JSON.stringify({ messages: [...messages, userMessage] }),
       });
 
@@ -64,8 +64,8 @@ export default function ChatBot() {
   const formatMessage = (text, isUser) => {
 
     const linkStyle = isUser 
-      ? "underline font-bold text-white hover:text-gray-200" 
-      : "underline font-bold text-blue-600 hover:text-blue-800";
+      ? "underline font-bold text-white hover:text-gray-200 break-all" 
+      : "underline font-bold text-blue-600 hover:text-blue-800 break-all";
 
     const regex = /(https?:\/\/[^\s]+|[0-9]{10,12})/g;
     const parts = text.split(regex);
@@ -129,7 +129,7 @@ export default function ChatBot() {
                     msg.role === 'user' 
                       ? 'bg-primary text-bg-1 rounded-tr-none' 
                       : 'bg-white text-gray-800 border border-gray-200 rounded-tl-none shadow-sm'
-                  }`}
+                  }wrap-break-words overflow-hidden`}
                 >
                   {formatMessage(msg.content, msg.role === 'user')}
                 </div>

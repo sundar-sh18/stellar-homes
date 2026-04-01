@@ -31,7 +31,7 @@ const data = [
             Why Choose Stellar Mulberry?
         </motion.div>
         
-        <div className='flex w-full lg:w-full lg:h-auto justify-center cursor-pointer'>
+        <div className='flex flex-col lg:flex-row  w-full lg:w-full lg:h-auto justify-center cursor-pointer'>
           <motion.div 
               initial={{ transform: "translateX(60px)", opacity: 0, filter: "blur(0px)"}}
             whileInView={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0)" }} 

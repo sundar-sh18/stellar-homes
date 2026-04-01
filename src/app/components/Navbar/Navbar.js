@@ -45,7 +45,7 @@ export default function Navbar() {
             </div>
 
       
-            <div className={`${isOpen ? 'flex' : 'hidden'} lg:flex flex-col lg:flex-row w-full lg:p-3 lg:pl-10 lg:pr-10 lg:rounded-full lg:w-auto gap-6 lg:gap-10 lg:justify-between items-center mt-6 lg:mt-0 lg:backdrop-blur-sm border border-white/50`}>
+            <div className={`${isOpen ? 'flex' : 'hidden'} lg:flex flex-col lg:flex-row w-full lg:p-3 lg:pl-10 lg:pr-10 lg:rounded-full lg:w-auto gap-6 lg:gap-10 lg:justify-between items-center mt-6 lg:mt-0 lg:backdrop-blur-sm lg:border lg:border-white/50`}>
                 <ul className='flex flex-col lg:flex-row gap-6 lg:gap-10 text-center w-full lg:w-auto'>
                     {nav.map((item) => (
                         <Link 

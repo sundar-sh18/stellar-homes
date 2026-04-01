@@ -97,31 +97,31 @@ export default function Hero() {
 
       <div ref={mainRef} className="relative z-10 w-full h-full">
 
-        <div className={`${style.float} flex flex-col justify-center items-center h-full text-center pt-20 lg:pt-0`}>
+        <div className={`${style.float} flex flex-col justify-center items-center h-full text-center pt-20 lg:pt-0 `}>
 
 
           <h1 
             ref={(el) => titleRef.current[0] = el}
-            className='text-white font-mont text-6xl md:text-8xl lg:text-[6rem] uppercase tracking-wider font-bold'
+            className='text-white font-mont text-5xl md:text-8xl lg:text-[6rem] uppercase tracking-wider font-bold leading-0'
           >
             Stellar
           </h1>
 
           <h1 
             ref={(el) => titleRef.current[1] = el}
-            className='text-white font-harrington text-9xl lg:text-[12rem]'
+            className='text-white font-harrington text-[7rem] lg:text-[12rem]'
           >
             Mulberry
           </h1>
 
           <h5 
             ref={(el) => titleRef.current[2] = el}
-            className='text-white font-mont text-base lg:text-[1.5rem] uppercase tracking-[20px]'
+            className='text-white font-mont text-sm lg:text-[1.5rem] uppercase tracking-[20px]'
           >
             Chikkaballapur
           </h5>
 
-          <div className={`${style.bar} absolute hidden lg:block bottom-10 lg:bottom-20 z-50 rounded-4xl`}><CircleArrowDown  onClick={()=>scrollToNextSection()} className='text-white size-10 hover:fill-white hover:text-primary  hover:scale-120 transition-all duration-200 ease-in-out border-0 rounded-full' strokeWidth={1} /></div>
+          <div className={`${style.bar} absolute lg:block bottom-10 lg:bottom-20 z-50 rounded-4xl`}><CircleArrowDown  onClick={()=>scrollToNextSection()} className='text-white size-10 hover:fill-white hover:text-primary  hover:scale-120 transition-all duration-200 ease-in-out border-0 rounded-full' strokeWidth={1} /></div>
         </div>
       </div>
     </div>

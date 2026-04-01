@@ -2,8 +2,6 @@ export const runtime = "nodejs";
 import Groq from 'groq-sdk';
 import { NextResponse } from 'next/server';
 
-
-
 const SYSTEM_PROMPT = `
 You are the friendly AI Sales Assistant for "Stellar Mulberry," a premium plotted development by Stellar Homes.
 Your goal is to answer queries politely, concisely, and encourage users to visit or contact sales.
@@ -28,31 +26,98 @@ RULES:
 4. Tone: Professional, warm, and inviting.
 `;
 
+const rateLimitMap = new Map();
+
+function rateLimit(ip) {
+  const now = Date.now();
+  const WINDOW = 60 * 1000;
+  const LIMIT = 10;
+
+  if (!rateLimitMap.has(ip)) {
+    rateLimitMap.set(ip, []);
+  }
+
+  const timestamps = rateLimitMap.get(ip).filter(t => now - t < WINDOW);
+  timestamps.push(now);
+  rateLimitMap.set(ip, timestamps);
+
+  return timestamps.length <= LIMIT;
+}
+
+function isValidMessages(messages) {
+  return (
+    Array.isArray(messages) &&
+    messages.length > 0 &&
+    messages.every(
+      (msg) =>
+        msg.role &&
+        typeof msg.content === "string" &&
+        msg.content.length > 0 &&
+        msg.content.length < 500
+    )
+  );
+}
+
 export async function POST(req) {
   try {
+    if (req.headers.get("x-app-key") !== "stellar-secret") {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
 
-      const groq = new Groq({
-    apiKey: process.env.GROQ_API_KEY,
-  });
+    const ip =
+      req.headers.get("x-forwarded-for") ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+
+    if (!rateLimit(ip)) {
+      return NextResponse.json(
+        { error: "Too many requests. Try again later." },
+        { status: 429 }
+      );
+    }
+
     const { messages } = await req.json();
 
-    const response = await groq.chat.completions.create({
-      model: "llama-3.1-8b-instant", 
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...messages,
-      ],
-      temperature: 0.7,
-      max_tokens: 1024,
+    if (!isValidMessages(messages)) {
+      return NextResponse.json(
+        { error: "Invalid message format" },
+        { status: 400 }
+      );
+    }
+
+    const trimmedMessages = messages.slice(-5);
+
+    const groq = new Groq({
+      apiKey: process.env.GROQ_API_KEY,
     });
 
-    return NextResponse.json({ 
-      role: 'assistant', 
-      content: response.choices[0]?.message?.content || "I couldn't generate a response."
+    const response = await groq.chat.completions.create({
+      model: "llama-3.1-8b-instant",
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        ...trimmedMessages,
+      ],
+      temperature: 0.7,
+      max_tokens: 300,
+    });
+
+    const rawContent =
+      response.choices[0]?.message?.content ||
+      "Sorry, I couldn't generate a response.";
+
+    const safeContent = rawContent.replace(/<[^>]*>?/gm, "");
+
+    return NextResponse.json({
+      role: "assistant",
+      content: safeContent,
     });
 
   } catch (error) {
-    console.error("Groq API Error:", error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error("Error:", error.message);
+
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }

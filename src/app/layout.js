@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
       >
         <SmoothScroll>
           {children}
-          <ChatBot/>
+          
           <Footer/>
         </SmoothScroll>
       </body>
